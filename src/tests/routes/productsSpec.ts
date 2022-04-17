@@ -35,7 +35,6 @@ describe('Product api endpoints', () => {
 
   describe('Test Product methods', () => {
     it('should create a product', async () => {
-      console.log(product)
       const res = await request
         .post('/api/products')
         .set('Authorization', `Bearer ${token}`)
@@ -72,11 +71,11 @@ describe('Product api endpoints', () => {
         .set('Authorization', `Bearer ${token}`)
         .set('Content-type', 'application/json')
         .send({
+          id: 1,
           name: 'Tshirt',
           price: 550.5
         })
       expect(res.status).toBe(200)
-      console.log(res.body.data)
       const { id, name, price } = res.body.data
       expect(name).toBe('Tshirt')
       expect(price).toBe(550.5)
@@ -87,8 +86,7 @@ describe('Product api endpoints', () => {
       const res = await request.delete('/api/products/1').set('Authorization', `Bearer ${token}`)
       expect(res.status).toBe(200)
       const { id, name, price } = res.body.data
-      console.log(res.body.data)
-      expect(name).toBe('Pants')
+      expect(name).toBe('Tshirt')
       expect(price).toBe(550.5)
       expect(id).toBeDefined()
     })

@@ -67,7 +67,6 @@ class ProductModel {
       //close connection
       connection.release()
       //return product
-      console.log(result.rows[0])
       return result.rows[0]
     } catch (err) {
       throw err

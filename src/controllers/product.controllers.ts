@@ -6,7 +6,6 @@ const productModel = new ProductModel()
 // create product function
 const createProduct = async (req: Request, res: Response, next: NextFunction) => {
   try {
- 
     const product = await productModel.createProduct(req.body)
     res.json({
       status: 'success',
