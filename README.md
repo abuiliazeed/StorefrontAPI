@@ -3,7 +3,7 @@
 ## Getting Started
 Clone this repo by running the following command
 ```
-git clone https://github.com/abuiliazeed/Storefront-API.git
+git clone https://github.com/abuiliazeed/StorefrontAPI.git
 ```
 go to the project directory by running the following command
 ```
