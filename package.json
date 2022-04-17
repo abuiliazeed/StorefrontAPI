@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "export ENV=test && db-migrate down && db-migrate up --env test && npx tsc && jasmine &&db-migrate reset",
-    "dev": "nodemon ./src/index.ts",
+    "dev": "db-migrate down && db-migrate up && nodemon ./src/index.ts",
     "build": "npx tsc",
-    "start": "db-migrate up && npm run build && node build/index.js",
+    "start": "db-migrate down && db-migrate up && npm run build && node build/index.js",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "lint": "eslint . --ext .ts"
   },

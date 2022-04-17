@@ -34,19 +34,6 @@ const validateTokenMiddleware = async (req: Request, res: Response, next: NextFu
       handleUnauthorizedError(next)
     }
 
-    // get value of token
-
-    // check if it bearer token or not
-
-    // verify token -- decode based on token secret
-
-    // next()
-
-    // failed to authenticate user
-
-    // token type not bearer
-
-    // no token provided
   } catch (error) {
     handleUnauthorizedError(next)
   }

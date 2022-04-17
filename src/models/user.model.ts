@@ -102,6 +102,7 @@ class UserModel {
       //close connection
       connection.release()
       //return user
+
       return result.rows[0]
     } catch (err) {
       throw err

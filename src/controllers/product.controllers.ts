@@ -52,7 +52,7 @@ const updateProduct = async (req: Request, res: Response, next: NextFunction) =>
     const product = await productModel.updateProduct(req.body)
     res.json({
       status: 'success',
-      data: product,
+      data: { ...product },
       message: 'product updated successfully'
     })
   } catch (err) {
