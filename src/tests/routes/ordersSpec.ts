@@ -21,7 +21,7 @@ const user = {
 }
 const token = jwt.sign({ user }, process.env.TOKEN_SECRET as string)
 
-describe('Orders api endpoints', () => {
+describe('Orders api routes test', () => {
     const user1 = {
         email: 'jon@gmail.com',
         firstname: 'jon',
@@ -59,6 +59,8 @@ describe('Orders api endpoints', () => {
         // alter sequence id to 1
         await connection.query('ALTER SEQUENCE orders_id_seq RESTART WITH 1')
         await connection.query('DELETE FROM orders;')
+        await connection.query('ALTER SEQUENCE users_id_seq RESTART WITH 1')
+        await connection.query('DELETE FROM users;')        
         connection.release()
     })
 

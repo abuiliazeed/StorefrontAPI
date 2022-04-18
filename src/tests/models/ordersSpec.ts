@@ -60,6 +60,8 @@ describe('Order Model', () => {
             // alter sequence id to 1
             await connection.query('ALTER SEQUENCE orders_id_seq RESTART WITH 1')
             await connection.query('DELETE FROM orders;')
+            await connection.query('ALTER SEQUENCE users_id_seq RESTART WITH 1')
+            await connection.query('DELETE FROM users;')
             connection.release()
         })
         // Testing create method
