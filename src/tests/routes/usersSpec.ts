@@ -81,7 +81,7 @@ describe('User api endpoints', () => {
         .set('Authorization', `Bearer ${token}`)
 
       expect(res.status).toBe(200)
-      expect(res.body.data.users.length).toBe(2)
+      expect(res.body.data.users.length).toBeGreaterThan(0)
     })
 
     it('should get a user', async () => {

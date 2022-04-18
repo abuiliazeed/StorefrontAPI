@@ -33,7 +33,7 @@ describe('Product api endpoints', () => {
     connection.release()
   })
 
-  describe('Test Product methods', () => {
+  describe('Test Product endpoints', () => {
     it('should create a product', async () => {
       const res = await request
         .post('/api/products')
