@@ -5,7 +5,9 @@ const orderModel = new OrderModel()
 
 const createOrder = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the order data from the request body
     const order = await orderModel.createOrder(req.body)
+    // returning the order created from the response
     res.json({
       status: 'success',
       data: { ...order },
@@ -19,6 +21,7 @@ const createOrder = async (req: Request, res: Response, next: NextFunction) => {
 const getAllOrders = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const orders = await orderModel.getAllOrders()
+    // returning all the orders throught the response
     res.json({
       status: 'success',
       data: { orders },
@@ -31,7 +34,9 @@ const getAllOrders = async (req: Request, res: Response, next: NextFunction) => 
 
 const updateOrder = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the order data to be updated from the request body
     const order = await orderModel.updateOrder(req.body)
+    // returning the order updated through the response
     res.json({
       status: 'success',
       data: { ...order },
