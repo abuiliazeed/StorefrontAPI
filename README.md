@@ -35,7 +35,7 @@ Here is the link:
 - https://go.postman.co/workspace/My-Workspace~e724996d-a7b4-413a-8302-e9e078570bfb/collection/5602590-0d6d99fb-c133-4bd9-b4e6-f0bc7045aee4?action=share&creator=5602590
 
 ## Technologies used
-- Docker
+- Docker to spin up a postgres docker container preinitialized with two databases one for develeopment and one for testing.
 - The application is built using Node/Express
 - The database is built using Postgres
 - The API is built using Express
