@@ -10,7 +10,7 @@
     "start": "db-migrate down && db-migrate up && npm run build && node build/index.js",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'",
     "lint": "eslint . --ext .ts",
-    "git":"git add . && git commit -m 'update' && git push origin master"
+    "git":"git status && git add . && git commit -m 'update' && git push origin master"
   },
   "repository": {
     "type": "git",
