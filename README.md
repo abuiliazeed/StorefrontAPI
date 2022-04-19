@@ -12,13 +12,24 @@ go to the project directory by running the following command
 ```
 cd Storefront-API
 ```
-Spinning up the database docker container 
+There is two ways to spin up the database:
+- First Method is manually creating two databases one for development storefrontdb and another one for testing storefrontdbtest
+you can do so by following the following command
+```
+CREATE DATABASE storefrontdb;
+CREATE DATABASE storefrontdbtest;
+```
+- Second Method : Spinning up a database docker container by running the following command
 ```
 docker-compose up -d
 ```
 run the following command to install all the dependencies
 ```
 npm install
+```
+You can also populate the database with the usre,product,orders,orderdetails using the following command
+```
+db-migrate up
 ```
 run the following command to start the Testing for the API endpoints
 ```
@@ -33,6 +44,12 @@ npm start
 - I Have made it easy for you i created a postman collection to test the API endpoints
 Here is the link:
 - https://go.postman.co/workspace/My-Workspace~e724996d-a7b4-413a-8302-e9e078570bfb/collection/5602590-0d6d99fb-c133-4bd9-b4e6-f0bc7045aee4?action=share&creator=5602590
+
+## Server Information
+- The API is running on port 3000
+
+## Database Information
+- The database is running on port 5432
 
 ## Technologies used
 - Docker to spin up a postgres docker container preinitialized with two databases one for develeopment and one for testing.
@@ -81,24 +98,24 @@ Here is the link:
 
 ## Data Shapes
 #### Product
-- id
-- name
-- price
+- id: SERIAL PRIMARY KEY
+- name: varchar(255)
+- price: float4
 
 #### User
-- id
-- firstName
-- lastName
-- password
+- id: SERIAL PRIMARY KEY
+- firstName: varchar(255)
+- lastName: varchar(255)
+- password: varchar(255)
 
 #### Orders
-- id
-- user_id
-- status of order (active or complete)
+- id: SERIAL PRIMARY KEY
+- user_id: integer
+- status of order : varchar(255) (active or complete)
 
 #### Order Details
-- id
-- id of each product in the order
-- quantity of each product in the order
-- order id
+- id: SERIAL PRIMARY KEY
+- id of each product in the order : integer
+- quantity of each product in the order: integer
+- order id: integer
 
