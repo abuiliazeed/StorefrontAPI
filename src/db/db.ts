@@ -2,7 +2,7 @@ import pg, { Pool } from 'pg'
 import dotenv from 'dotenv'
 
 dotenv.config()
-
+// we fetch all the environment variables from the .env file utilizing the dotenv package
 const {
   POSTGRES_USER,
   POSTGRES_PASSWORD,
@@ -17,6 +17,7 @@ const {
 
 let dbclient: Pool = new Pool()
 
+// if we choose the testing environment the dbclient will connect to the testing database
 if (ENV === 'test') {
   dbclient = new pg.Pool({
     user: POSTGRES_USER,
@@ -25,6 +26,7 @@ if (ENV === 'test') {
     password: POSTGRES_PASSWORD,
     port: Number(POSTGRES_PORT)
   })
+  // if we choose the dev environment the dbclient will connect with the development database
 } else {
   dbclient = new pg.Pool({
     user: POSTGRES_USER,
