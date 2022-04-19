@@ -38,7 +38,6 @@ Here is the link:
 - Docker to spin up a postgres docker container preinitialized with two databases one for develeopment and one for testing.
 - The application is built using Node/Express
 - The database is built using Postgres
-- The API is built using Express
 - The API is Authenticated using JWT (jasonwebtoken package)
 - dotenv from npm for managing environment variables
 - db-migrate from npm for migrations
