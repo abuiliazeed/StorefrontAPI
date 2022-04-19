@@ -6,7 +6,9 @@ const productModel = new ProductModel()
 // create product function
 const createProduct = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the product data from the request body
     const product = await productModel.createProduct(req.body)
+    //returning the product created
     res.json({
       status: 'success',
       data: { ...product },
@@ -21,6 +23,7 @@ const createProduct = async (req: Request, res: Response, next: NextFunction) =>
 const getAllProducts = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const products = await productModel.getAllProducts()
+    // returning all the products send through the response
     res.json({
       status: 'success',
       data: { products },
@@ -34,7 +37,9 @@ const getAllProducts = async (req: Request, res: Response, next: NextFunction) =
 // get product by id function
 const getProductById = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching id from the request params
     const product = await productModel.getProductById(Number(req.params.id))
+    // returning the product through the response
     res.json({
       status: 'success',
       data: { ...product },
@@ -48,7 +53,9 @@ const getProductById = async (req: Request, res: Response, next: NextFunction) =
 // update a product
 const updateProduct = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the product data that need to be updated throught the request body
     const product = await productModel.updateProduct(req.body)
+    // returning the product updated from the response
     res.json({
       status: 'success',
       data: { ...product },
@@ -62,7 +69,9 @@ const updateProduct = async (req: Request, res: Response, next: NextFunction) =>
 // delete a product
 const deleteProduct = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the product id that we want to delete from the request params
     const product = await productModel.deleteProduct(Number(req.params.id))
+    // returning the product that we deleted
     res.json({
       status: 'success',
       data: product,
