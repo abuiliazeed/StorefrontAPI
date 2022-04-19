@@ -32,24 +32,23 @@ The online storefront API is able to showcase product. Users able to browse an i
 
 ## Data Shapes
 #### Product
--  id
-- name
-- price
+- id: SERIAL PRIMARY KEY
+- name: varchar(255)
+- price: float4
 
 #### User
-- id
-- firstName
-- lastName
-- password
+- id: SERIAL PRIMARY KEY
+- firstName: varchar(255)
+- lastName: varchar(255)
+- password: varchar(255)
 
 #### Orders
-- id
-- user_id
-- status of order (active or complete)
+- id: SERIAL PRIMARY KEY
+- user_id: integer
+- status of order : varchar(255) (active or complete)
 
 #### Order Details
-- id
-- id of each product in the order
-- quantity of each product in the order
-- order id
-
+- id: SERIAL PRIMARY KEY
+- id of each product in the order : integer
+- quantity of each product in the order: integer
+- order id: integer
