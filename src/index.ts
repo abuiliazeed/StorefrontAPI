@@ -22,6 +22,7 @@ dbclient.connect().then((client) => {
 })
 
 app.use(express.json())
+// we use the api routes that we have created
 app.use('/api', routes)
 
 // add routing for / path
