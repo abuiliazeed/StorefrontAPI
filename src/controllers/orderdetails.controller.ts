@@ -5,7 +5,9 @@ const orderdetailsModel = new OrderdetailsModel()
 
 const createOrderdetails = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the orderdetails from the request body
     const orderdetails = await orderdetailsModel.createOrderdetails(req.body)
+    // returning the orderdetails created throught the response
     res.json({
       status: 'success',
       data: { ...orderdetails },
@@ -19,6 +21,7 @@ const createOrderdetails = async (req: Request, res: Response, next: NextFunctio
 const getAllOrderdetails = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const orderdetails = await orderdetailsModel.getAllOrderdetails()
+    // returning all orderdetails throught the response
     res.json({
       status: 'success',
       data: { orderdetails },
@@ -31,7 +34,9 @@ const getAllOrderdetails = async (req: Request, res: Response, next: NextFunctio
 
 const updateOrderdetails = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the orderdetails that need to be updated from the request body
     const orderdetails = await orderdetailsModel.updateOrderdetails(req.body)
+    // returning the orderdetails updated throught the response
     res.json({
       status: 'success',
       data: { ...orderdetails },
@@ -44,7 +49,9 @@ const updateOrderdetails = async (req: Request, res: Response, next: NextFunctio
 
 const deleteOrderdetails = async (req: Request, res: Response, next: NextFunction) => {
   try {
+    // fetching the orderdetails that need to be deleted through the request body
     const orderdetails = await orderdetailsModel.deleteOrderdetails(req.body)
+    // returning the orderdetails deleted through the response
     res.json({
       status: 'success',
       data: { ...orderdetails },
